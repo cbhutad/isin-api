@@ -33,7 +33,7 @@ function createDBConnection() {
         createTable(db);
         return db;
     } else {
-        const db new sqlite3.Database(filepath, (error) => {
+        const db = new sqlite3.Database(filepath, (error) => {
             if(error) {
                 return console.error(error.message);
             }
