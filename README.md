@@ -1,16 +1,43 @@
 # isin-api
 
-Source code for ISIN API hosted on cloudflare.
+Source code for ISIN API hosted on cloudflare. Check wiki section for more details.
 
-## Code structure
+## Execution 
 
-- src
-    - scripts
-        - setup.js -> Execute .db file generation logic. calls `readCSV` from readcsv.js
-        - readcsv.js -> get the previous day release and create .db file logic.
-        - insertdata.js -> inserts a single csv entry as row in sqlite3 database.
-        - db.js -> return an instance for sqlite3 file.
-    - csv
-        - contains the release file generated in csv format named as `isin.csv`.
-    - db
-        - contains the sqlite3 file with extension .db named as `isin.db`.
+Follow the given steps below to setup a new release for database.
+
+1. Execute the `setup.js` under `src/scripts` folder
+
+``` Node.js
+
+node src/scripts/setup.js
+
+```
+2. After completion of the previous step, `.db` file (sqlite database file) should be generated in `src/scripts/db` folder. Convert to sqlite `.sql` file using below command
+
+```
+
+sqlite3 <path to db folder>/isin.db .dump > ../sql/isin.sql
+
+```
+
+Check Db gerneration page under wiki for references.
+
+3. Export the db to remote D1 server using below command. Ensure that wrangler login has been done prior to execution of below command.
+
+```
+$ npx wrangler d1 export <database_name> --remote --output=isin.sql
+
+```
+
+The database name is mentioned in the `wrangler.toml` file.
+
+Steps to update worker 
+
+1. In case the worker related changes are performed such as updating the wrangler.toml or rest endpoints modification then this must be pushed to remote worker server using the below command
+
+```
+
+npx wrangler deploy
+
+```
