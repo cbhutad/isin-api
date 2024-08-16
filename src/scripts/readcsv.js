@@ -43,7 +43,7 @@ async function readCSV() {
     rl.on("line", function(line) {
         const columns = line.trim().split(/,(?=(?:[^"]*"[^"]*")*[^"]*$)/);
         //Skipping the header for csv.
-        if(columns.length == 5 && columns[0] === "ISIN" && columns[1] === "Description" && columns[2] === "Issuer" && columns[3] === "Type" &    & columns[4] === "Status") {
+        if(columns.length == 5 && columns[0] === "ISIN" && columns[1] === "Description" && columns[2] === "Issuer" && columns[3] === "Type" && columns[4] === "Status") {
             console.log("Header removed");
             return;
         }
