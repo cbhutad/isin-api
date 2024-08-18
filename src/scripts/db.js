@@ -1,6 +1,6 @@
 const fs = require("fs");
 const sqlite3 = require("sqlite3").verbose();
-const filepath = __dirname + "db/isin.db";
+const filepath = __dirname + "/db/isin.db";
 
 function createTable(db) {
 
