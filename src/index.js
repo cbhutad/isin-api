@@ -22,15 +22,15 @@ const apiDoc = `
             <div>
                 <h3> API endpoints </h3>
                 <h4><i><strong>/api/isin/{ISIN number}</strong></i></h4>
-                <p> Provides details for the given ISIN. The ISIN can be provided in lowercase or uppercase format. <a href="https://db-exampe.testmailcbhutad.workers.dev/api/isin/IN000126C010">Sample Example.</a></p>
+                <p> Provides details for the given ISIN. The ISIN can be provided in lowercase or uppercase format. <a href="https://isin-api.softwaredev5597.workers.dev/api/isin/IN000126C010">Sample Example.</a></p>
                 <h4><i><strong>/api/isin_status/{STATUS}</strong></i></h4>
-                <p> Provides list of ISIN of given status. The status can be provided in lowercase or uppercase format. <a href="https://db-exampe.testmailcbhutad.workers.dev/api/isin_status/blocked due to aca">Sample Example.</a></p>
+                <p> Provides list of ISIN of given status. The status can be provided in lowercase or uppercase format. <a href="https://isin-api.softwaredev5597.workers.dev/api/isin_status/blocked due to aca">Sample Example.</a></p>
                 <h4><i><strong>/api/isin_status_type/{STATUS}/{TYPE}</strong></i></h4>
-                <p> Provides list of ISIN of given status and type. The status, type can be provided in lowercase or uppercase format. <a href="https://db-exampe.testmailcbhutad.workers.dev/api/isin_status_type/blocked due to aca/equity shares">Sample Example.</a></p>
+                <p> Provides list of ISIN of given status and type. The status, type can be provided in lowercase or uppercase format. <a href="https://isin-api.softwaredev5597.workers.dev/api/isin_status_type/blocked due to aca/equity shares">Sample Example.</a></p>
                 <h4><i><strong>/api/isin_status_type_issuer/{STATUS}/{TYPE}/{ISSUER}</strong></i></h4>
-                <p> Provides list of ISIN of given status, type and issuer. The status, type and issuer can be provided in lowercase or uppercase format. <a href="https://db-exampe.testmailcbhutad.workers.dev/api/isin_status_type_issuer/blocked due to aca/equity shares/tata steel bsl limited">Sample Example.</a></p>
+                <p> Provides list of ISIN of given status, type and issuer. The status, type and issuer can be provided in lowercase or uppercase format. <a href="https://isin-api.softwaredev5597.workers.dev/api/isin_status_type_issuer/blocked due to aca/equity shares/tata steel bsl limited">Sample Example.</a></p>
                 <h4><i><strong>/api/isin_description/{DESCRIPTION}</strong></i></h4>
-                <p> Provides list of ISIN of given description which may be even partially matching. The description can be provided in lowercase or uppercase format. <a href="https://db-exampe.testmailcbhutad.workers.dev/api/isin_description/quant mutual fund">Sample Example.</a></p>
+                <p> Provides list of ISIN of given description which may be even partially matching. The description can be provided in lowercase or uppercase format. <a href="https://isin-api.softwaredev5597.workers.dev/api/isin_description/quant mutual fund">Sample Example.</a></p>
             </div>
             <div>
                 <h3>Source</h3>
@@ -41,7 +41,7 @@ const apiDoc = `
 `;
 
 app.get('/', async c => {
-    const docUrl = "https://db-exampe.testmailcbhutad.workers.dev/docs"
+    const docUrl = "https://isin-api.softwaredev5597.workers.dev/docs"
     return c.redirect(docUrl);
 });
 
