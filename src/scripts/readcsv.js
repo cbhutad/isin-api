@@ -4,7 +4,7 @@ const readline = require("readline");
 const insertRow = require("./insertdata");
 
 //generated csv file path
-const filePath = __dirname + "csv/isin.csv";
+const filePath = __dirname + "/csv/isin.csv";
 
 //Get today's date to create URL format
 const currentDate = new Date();
@@ -21,11 +21,10 @@ let recordCount = 0;
 async function fetchCSV() {
 
     const githubURL = `https://github.com/captn3m0/india-isin-data/releases/download/v${year}.${month}.${day}/ISIN.csv`;
-    console.log(url);
-    const response = await axios.get(url);
+    const response = await axios.get(githubURL);
     csvString = response.data;
     fs.writeFileSync(filePath, csvString);
-    consolg.log("CSV File created successfully");
+    console.log("CSV File created successfully");
 
 }
 
@@ -67,4 +66,4 @@ async function readCSV() {
     });
 }
 
-module.exports = readCSV();
+module.exports = readCSV;
